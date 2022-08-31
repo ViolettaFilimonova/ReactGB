@@ -16,7 +16,7 @@ function App() {
     }
   return (
     <div className="App">
-        <h2>Class components</h2>
+        <h2 style={{backgroundColor: 'green'}}>Class components</h2>
         <CountClass/>
         <ClassForm/>
         <hr/>
