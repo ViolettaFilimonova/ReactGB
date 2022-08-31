@@ -8,6 +8,7 @@ import {useState} from "react";
 
 function App() {
     const [name, setName] = useState('geek')
+    const [count, setCount] = useState(0)
     const handleChangeName = (ev) => {
       setName(ev.target.value)
     }
@@ -16,10 +17,11 @@ function App() {
         <Count name={'Violetta'}/>
         <ClassForm/>
         <hr/>
-        <p>Parent Component</p>
+        <h3>Parent Component</h3>
+        <p>{count}</p>
         <input type="text" onChange={handleChangeName}/>
-        <p>Child Component</p>
-        <ChildComponent name={name}/>
+        <h3>Child Component</h3>
+        <ChildComponent handleChangeCount={setCount} name={name}/>
     </div>
   );
 }
