@@ -16,7 +16,7 @@ function App() {
       setName(ev.target.value)
     }
   return (
-    <div className="App">
+    <div className="Form">
         <h2 style={{backgroundColor: 'green'}}>Class components</h2>
         <CountClass/>
         <ClassForm/>
