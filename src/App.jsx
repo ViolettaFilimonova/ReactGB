@@ -17,6 +17,7 @@ function App() {
     }
   return (
     <div className="Form">
+        <h1>Less1</h1>
         <h2 style={{backgroundColor: 'green'}}>Class components</h2>
         <CountClass/>
         <ClassForm/>
