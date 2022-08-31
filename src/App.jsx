@@ -1,7 +1,8 @@
 
 import './App.css';
-
+import './index.css'
 import {Form as ClassForm} from "./components-class/Form";
+import {Form} from "./components/Form/Form";
 import {Count as CountClass} from "./components-class/Count";
 import {Count} from "./components/Count";
 import {ChildComponent} from "./components/ChildComponent";
@@ -30,6 +31,7 @@ function App() {
         {arr.map((item, ind) => {
             return <p key={ind}>{item}</p>
         })}
+        <Form/>
     </div>
   );
 }
