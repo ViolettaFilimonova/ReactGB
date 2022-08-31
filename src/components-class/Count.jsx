@@ -8,10 +8,10 @@ export class Count extends React.Component {
         this.setState({count: this.state.count + 1})
     }
     render() {
-
         return(
             <div>
-                <p>Count: {this.state.count}</p>
+                <p>Count state: {this.state.count}</p>
+                <p>Count props: {this.props.count}</p>
                 <button type="button" onClick={this.handleClick}>click</button>
             </div>
         )

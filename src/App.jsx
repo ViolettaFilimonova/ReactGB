@@ -7,7 +7,7 @@ import {Count} from "./components-class/Count";
 function App() {
   return (
     <div className="App">
-        <Count/>
+        <Count count={10}/>
         <ClassForm/>
     </div>
   );
