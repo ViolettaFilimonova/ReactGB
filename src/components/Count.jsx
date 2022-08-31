@@ -1,9 +1,11 @@
 import React from "react";
+import {useState} from "react";
 
 export const Count = () => {
-    const  count = 1
+    const  [count, setCount] = useState(1)
+
     const handleClick = () => {
-        console.log('click')
+        setCount(count + 1)
     }
     return(
         <div>
