@@ -7,6 +7,7 @@ import {Count as CountClass} from "./components-class/Count";
 import {Count} from "./components/Count";
 import {ChildComponent} from "./components/ChildComponent";
 import {useState} from "react";
+import {Message} from "./components/Message/Message";
 
 function App() {
     const [name, setName] = useState('geek')
@@ -32,6 +33,7 @@ function App() {
             return <p key={ind}>{item}</p>
         })}
         <Form/>
+        <Message text={'Props Message'}/>
     </div>
   );
 }
