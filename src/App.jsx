@@ -33,7 +33,7 @@ function App() {
             return <p key={ind}>{item}</p>
         })}
         <Form/>
-        <Message text={'Props Message'}/>
+        <Message text={'Props Message!'}/>
     </div>
   );
 }
