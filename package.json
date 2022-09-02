@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "homepage": "http://{username}.github.io/{repo-name}",
+    "homepage": "https://violettafilimonova.github.io/ReactGB/",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
