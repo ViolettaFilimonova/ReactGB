@@ -1,10 +1,16 @@
 import React from 'react';
-import style from './message.module.css';
 
-export const Message = (props) => {
+import {MessageItem} from "components/Message/MessageItem";
+
+export const Message = ({message}) => {
+
   return (
     <>
-      <h2 className={style.messageText}>{props.text}</h2>
+        {message.map(item =>
+            <div key={item.author}>
+                <MessageItem item={item}/>
+            </div>
+        )}
     </>
   );
 };
