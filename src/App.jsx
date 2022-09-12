@@ -20,7 +20,7 @@ function App() {
             if (messageList.length > 0) {
                 alert("Сообщение доставлено!");
             }
-        }, 1500);
+        }, 1800);
     }
 
   return (
