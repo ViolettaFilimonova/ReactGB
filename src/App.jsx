@@ -1,42 +1,52 @@
-import './App.css';
-import './index.css';
-import {useState} from "react";
-import {Message} from './components/Message/Message'
-import React, {  useEffect } from 'react';
+// import './App.css';
+// import './index.css';
+// import {useState} from "react";
+// import React, {  useEffect } from 'react';
+// import {Form} from "../src/components/Form";
+//
+// function App() {
+//
+//
+//
+//   return (
+//     <Form/>
+//   );
+// }
+//
+// export default App;
+import { Form } from 'components/Form';
+import { MessageList } from 'components/MessageList';
+import { useState, useEffect } from 'react';
+import { AUTHOR } from './contants';
 
-function App() {
-    const [messageList, setMessageList] = useState([])
-    let [text, setText] = useState('')
-    let [author, setAuthor] = useState('')
-    useEffect(() => {
-        addMessage()
-    }, [])
-    const addMessage = () => {
-        let message = {author: author, text: text}
-        setMessageList([...messageList, message]);
-        setText('')
-        setAuthor('')
-        setTimeout(() => {
-            if (messageList.length > 0) {
-                alert("Сообщение доставлено!");
-            }
-        }, 1800);
+export const App = () => {
+  const [messages, setMessages] = useState([]);
+
+  const addMessage = (newMessage) => {
+    setMessages((prevMesages) => [...prevMesages, newMessage]);
+  };
+
+  useEffect(() => {
+    if (
+        messages.length > 0 &&
+        messages[messages.length - 1].author === AUTHOR.user
+    ) {
+      const timeout = setTimeout(() => {
+        addMessage({
+          author: AUTHOR.bot,
+          value: 'Im BOT',
+        });
+      }, 1000);
+
+      return () => clearTimeout(timeout);
     }
+  }, [messages]);
 
   return (
-    <div className="Form">
-        <Message message={messageList}/>
-        <input type="text"
-               value={author}
-               onChange={e => setAuthor(e.target.value)}
-               placeholder='Введите имя'/>
-        <input type="text"
-               value={text}
-               onChange={e => setText(e.target.value)}
-               placeholder='Введите сообщение'/>
-        <button onClick={addMessage} type='button'>Отправить</button>
-    </div>
+      <>
+        <MessageList messages={messages} />
+        <Form addMessage={addMessage} />
+      </>
   );
-}
-
+};
 export default App;
